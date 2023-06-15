@@ -4,7 +4,7 @@ class MovieStorage: ObservableObject {
     @Published  var selectedGenre : Genre = .fantasy
     @Published  var sortingOption : SortingOption = .title
     
-   private let movies = [
+    private let movies = [
         Movie(title: "Harry Potter", genre: .fantasy, rating: 8.2),
         Movie(title: "Twilight", genre: .fantasy, rating: 8.4),
         Movie(title: "Mad Max", genre: .fantasy, rating: 8.0),
@@ -31,7 +31,7 @@ class MovieStorage: ObservableObject {
         Movie(title: "Good Will Hunting", genre: .drama, rating: 8.8)
     ]
     
-    var filteredMovies: [Movie] {
+    private var filteredMovies: [Movie] {
         movies.filter { $0.genre == selectedGenre }
     }
     

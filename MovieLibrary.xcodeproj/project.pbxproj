@@ -14,6 +14,7 @@
 		B57CAB912A2A3D050031A91C /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CAB902A2A3D050031A91C /* Genre.swift */; };
 		B57CAB932A2A3D520031A91C /* SortingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CAB922A2A3D520031A91C /* SortingOption.swift */; };
 		B57CAB952A2A3D800031A91C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57CAB942A2A3D800031A91C /* Movie.swift */; };
+		B5D662C72A3B34D8009FC014 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D662C62A3B34D8009FC014 /* MovieList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,8 @@
 		B57CAB902A2A3D050031A91C /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		B57CAB922A2A3D520031A91C /* SortingOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingOption.swift; sourceTree = "<group>"; };
 		B57CAB942A2A3D800031A91C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		B5D662C62A3B34D8009FC014 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
+		B5D662C82A3B3E74009FC014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +60,10 @@
 		B56D779A2A0A9CDF0052FDFF /* MovieLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				B5D662C82A3B3E74009FC014 /* Info.plist */,
 				B56D779B2A0A9CDF0052FDFF /* MovieLibraryApp.swift */,
 				B56D779D2A0A9CDF0052FDFF /* ContentView.swift */,
+				B5D662C62A3B34D8009FC014 /* MovieList.swift */,
 				B57CAB942A2A3D800031A91C /* Movie.swift */,
 				B57CAB922A2A3D520031A91C /* SortingOption.swift */,
 				B57CAB902A2A3D050031A91C /* Genre.swift */,
@@ -146,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D662C72A3B34D8009FC014 /* MovieList.swift in Sources */,
 				B57CAB912A2A3D050031A91C /* Genre.swift in Sources */,
 				B57CAB932A2A3D520031A91C /* SortingOption.swift in Sources */,
 				B56D779E2A0A9CDF0052FDFF /* ContentView.swift in Sources */,
@@ -281,7 +287,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MovieLibrary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -309,7 +315,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = MovieLibrary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

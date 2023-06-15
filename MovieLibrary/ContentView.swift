@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var movieStorege = MovieStorage()
+    @StateObject private var movieStorage = MovieStorage()
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.blue
@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Picker("Genre", selection: $movieStorege.selectedGenre) {
+            Picker("Genre", selection: $movieStorage.selectedGenre) {
                 ForEach(Genre.allCases, id: \.self) { genre in
                     Text(genre.rawValue.capitalized).tag(genre)
                 }
@@ -23,16 +23,16 @@ struct ContentView: View {
             
             HStack {
                 Button("Sort by Title") {
-                    movieStorege.sortingOption = .title
+                    movieStorage.sortingOption = .title
                 }
                 .padding()
                 
                 Button("Sort by Rating") {
-                    movieStorege.sortingOption = .rating
+                    movieStorage.sortingOption = .rating
                 }
                 .padding()
             }
-            List(movieStorege.sortedMovies) { movie in
+            List(movieStorage.sortedMovies) { movie in
                 VStack(alignment: .leading) {
                     Text(movie.title)
                         .font(.title)

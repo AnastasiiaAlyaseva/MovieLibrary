@@ -1,10 +1,10 @@
 import Foundation
 
 class MovieStorage: ObservableObject {
-    @Published var selectedGenre : Genre = .fantasy
-    @Published var sortingOption : SortingOption = .title
+    @Published  var selectedGenre : Genre = .fantasy
+    @Published  var sortingOption : SortingOption = .title
     
-    let movies = [
+   private let movies = [
         Movie(title: "Harry Potter", genre: .fantasy, rating: 8.2),
         Movie(title: "Twilight", genre: .fantasy, rating: 8.4),
         Movie(title: "Mad Max", genre: .fantasy, rating: 8.0),

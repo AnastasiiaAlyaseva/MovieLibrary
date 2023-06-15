@@ -1,5 +1,9 @@
 import Foundation
 
+class MovieStorage: ObservableObject {
+    @Published var selectedGenre : Genre = .fantasy
+    @Published var sortingOption : SortingOption = .title
+    
     let movies = [
         Movie(title: "Harry Potter", genre: .fantasy, rating: 8.2),
         Movie(title: "Twilight", genre: .fantasy, rating: 8.4),
@@ -26,3 +30,17 @@ import Foundation
         Movie(title: "Billy Elliot", genre: .drama, rating: 8.7),
         Movie(title: "Good Will Hunting", genre: .drama, rating: 8.8)
     ]
+    
+    var filteredMovies: [Movie] {
+        movies.filter { $0.genre == selectedGenre }
+    }
+    
+    var sortedMovies: [Movie] {
+        switch sortingOption {
+        case .title:
+            return filteredMovies.sorted {$0.title < $1.title }
+        case .rating:
+            return filteredMovies.sorted {$0.rating > $1.rating}
+        }
+    }
+}

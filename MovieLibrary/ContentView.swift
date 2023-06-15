@@ -1,23 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State private var selectedGenre : Genre = .fantasy
-    @State private var sortingOption : SortingOption = .title
-    
-    // TODO: move to separate file - part 2
-    var filteredMovies: [Movie] {
-        movies.filter { $0.genre == selectedGenre }
-    }
-    
-    var sortedMovies: [Movie] {
-        switch sortingOption {
-        case .title:
-            return filteredMovies.sorted {$0.title < $1.title }
-        case .rating:
-            return filteredMovies.sorted {$0.rating > $1.rating}
-        }
-    }
+    @StateObject private var movieStorege = MovieStorage()
     
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.blue
@@ -29,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Picker("Genre", selection: $selectedGenre) {
+            Picker("Genre", selection: $movieStorege.selectedGenre) {
                 ForEach(Genre.allCases, id: \.self) { genre in
                     Text(genre.rawValue.capitalized).tag(genre)
                 }
@@ -39,16 +23,16 @@ struct ContentView: View {
             
             HStack {
                 Button("Sort by Title") {
-                    sortingOption = .title
+                    movieStorege.sortingOption = .title
                 }
                 .padding()
                 
                 Button("Sort by Rating") {
-                    sortingOption = .rating
+                    movieStorege.sortingOption = .rating
                 }
                 .padding()
             }
-            List(sortedMovies) { movie in
+            List(movieStorege.sortedMovies) { movie in
                 VStack(alignment: .leading) {
                     Text(movie.title)
                         .font(.title)
